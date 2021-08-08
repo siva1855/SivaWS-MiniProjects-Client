@@ -1,0 +1,47 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <mat-card class="mt20">
+                    <mat-card-header>
+                        <mat-card-title>
+                            Read The Instructions of This Page Carefully
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            One Step More To Go
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content class="ml20" *ngIf="quiz">
+                        <h1>{{quiz.quizTitle}}</h1>
+                        <p>{{quiz.quizDescription}}</p>
+                        <mat-divider></mat-divider><br/>
+                        <h1>Important Quiz Instructions</h1>
+                        <ul>
+                            <li>This Quiz is only for Practice Purpose.</li>
+                            <!-- let the time of each questions in 2 minutes. -->
+                            <li>You Have to Submit Quiz with in <b>{{quiz.quizNumberOfQuestions * 2}} Minutes.</b></li>
+                            <li>You can attempt the quiz any number of Time.</li>
+                            <li>There are <b>{{quiz.quizNumberOfQuestions}} Questions</b> in this quiz.</li>
+                            <li>Total <b>{{quiz.quizMaximumMarks}} Marks.</b></li>
+                            <li>Each Questions carries <b>{{quiz.quizMaximumMarks / quiz.quizNumberOfQuestions}} marks.</b> No Negative marking for wrong once.</li>
+                            <li>All Questions is of MCQ Types.</li>
+                        </ul>
+                        <mat-divider></mat-divider><br/>
+                        <h1>Attempting Quiz</h1>
+                        <ul>
+                            <li>Click <b>Start QUIZ</b> Button to Start the Quiz.</li>
+                            <li>The Time Will Start the moment you click the Start test Button.</li>
+                            <li>You can not resume this quiz,if interrupted due to any reson.</li>
+                            <li>Scroll down to move the next Question</li>
+                            <li>Click on Submit Quiz button on completion of the Quiz.</li>
+                            <li>Report of the test is automatically generated in the form of PDF Copy.</li>
+                        </ul>
+                    </mat-card-content>
+                    <mat-card-actions class="text-center">
+                        <button (click)="startQuiz()" mat-raised-button color="primary">Start QUIZ</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

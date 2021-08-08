@@ -1,0 +1,45 @@
+<h1 class="mt20">Questions Of {{quizTitle}} Quiz</h1>
+<div class="bootstrap-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="container text-center">
+                <button [routerLink]="'/admin/add-question/'+quizId+'/'+quizTitle" mat-raised-button color="primary">Add Question</button>
+            </div>
+            <mat-card *ngFor="let q of questions;let i=index" class="mt20">
+
+                <mat-card-content>
+                    <p>
+                        <b>Q {{i+1}})</b>&nbsp;
+                        <span [innerHTML]="q.questionContent"></span>
+                    </p>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><b>A) </b>{{q.questionOption1}}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><b>B) </b>{{q.questionOption2}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><b>C) </b>{{q.questionOption3}}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><b>D) </b>{{q.questionOption4}}</p>
+                            </div>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <p class="mt20">
+                            <b>Correct Answer :</b> {{q.questionAnswer}}
+                        </p>
+                    </div>
+                </mat-card-content>
+                <mat-card-action>
+                    <button mat-stroked-button color="primary">Update</button>
+                    <button (click)="deleteQuestion(q.questionId)" mat-stroked-button color="warn" class="ml20">Delete</button>
+                </mat-card-action>
+            </mat-card>
+        </div>
+    </div>
+</div>
